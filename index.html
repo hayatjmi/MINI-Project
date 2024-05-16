@@ -15,18 +15,32 @@
             background-color: #f0f0f0;
         }
         button {
-            padding: 10px 20px;
+            padding: 7px 14px;
             font-size: 16px;
             cursor: pointer;
+            background-color: rgb(21, 167, 224);
+            color: white;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <button onclick="showCertificate()">View Certificate</button>
+    <button onclick="downloadCertificate()">Course Certificate</button>
 
     <script>
-        function showCertificate() {
-            window.location.href = "index2.html";
+        function downloadCertificate() {
+            // Create an anchor element
+            var link = document.createElement("a");
+            // Set the href attribute to the URL of the certificate image
+            link.href = "IOT HAYAT NEW.pdf";
+            // Set the download attribute to specify the filename
+            link.download = "IOT HAYAT NEW.pdf";
+            // Append the anchor element to the document body
+            document.body.appendChild(link);
+            // Trigger a click event on the anchor element
+            link.click();
+            // Remove the anchor element from the document body
+            document.body.removeChild(link);
         }
     </script>
 </body>
